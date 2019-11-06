@@ -6,6 +6,22 @@
 
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)  [![Badge](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/zh_CN)  [![Mail](https://img.shields.io/badge/mail-zhangty1996@163.com-orange.svg)]()
 
-### An HTML-based dynamic web page
-### Birthday gift for my best friend.
-Demo：[https://ztygalaxy.github.io/happybirthdayfxn/](https://ztygalaxy.github.io/happybirthdayfxn/)
+### An HTML-based dynamic web page.
+### A birthday gift for my best friend.
+### 🎉Demo
+
+Click: [Happy Birthday](https://ztygalaxy.github.io/happybirthdayfxn/)
+
+### 🔨 How to reuse
+
+If you are familiar with `HTML`, you will get started with this code soon.
+
+Change the width with `your page numbers*100%` in `app.css`.
+
+### 🎤 Others
+
+First Vision: 2017-03-27
+
+Last Update: 2019-11-06
+
+**Mail to me if any problem.**
