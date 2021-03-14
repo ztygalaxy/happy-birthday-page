@@ -10,7 +10,7 @@
 
  [Happy Birthday](https://ztygalaxy.github.io/happybirthdayfxn/) 或者扫描下方二维码
 
-<img src="qcode.png" style="zoom: 33%;" align='left'/>
+ <img src="qcode.png" style="zoom:33%;" />
 
 ### 🔨 快速开始
 
