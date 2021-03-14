@@ -8,7 +8,9 @@
 ### 一个HTML动态网页生日贺卡，送给好朋友的生日礼物.
 ### 🎉 演示地址
 
- [Happy Birthday](https://ztygalaxy.github.io/happybirthdayfxn/)
+ [Happy Birthday](https://ztygalaxy.github.io/happybirthdayfxn/) 或者扫描下方二维码
+
+<img src="qcode.png" style="zoom: 33%;" align='left'/>
 
 ### 🔨 快速开始
 
@@ -20,6 +22,6 @@
 
 首次提交：`2017-03-27`
 
-最新提交：`2019-11-06`
+最新提交：`2020-03-12`
 
-有问题可以[邮件](mailto:zhangty1996@163.com)给我。
+记得给我一颗star，有问题可以[邮件](mailto:zhangty1996@163.com)给我。
