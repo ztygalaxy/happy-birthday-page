@@ -14,19 +14,21 @@ html,body{
    height: 100%
 }
 .viewport{
-   width: 800%;
+   width: 100%;
    height: 100%;
    display: -webkit-box;
    overflow: hidden;
-   /*pointer-events: none; 去掉这句话*/
    -webkit-transform: translate3d(0,0,0);
    backface-visibility: hidden;
    position: relative;
 }
 .pageview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     -webkit-box-flex: 1;
     width: 100%;
-	height: 100%;
+    height: 100%;
 }
 .pagenumber{
     display: -webkit-box;
