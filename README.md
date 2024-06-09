@@ -1,31 +1,37 @@
 <p align="center">
-    <img width="100" height="100" src="https://pic.tyzhang.top/images/2022/06/11/icon.png" alt="logo">
+    <img width="100" height="100" src="icon.png" alt="logo">
 </p>
 
 # happy-birthday-page
 
-### 一个HTML动态网页生日贺卡，送给好朋友的生日礼物.
+### 一个 HTML 动态网页生日贺卡，送给好朋友的生日礼物。
 
-### 🎉 演示地址
+<img src="demo.jpeg" style="width: 200px" />
 
-[Happy Birthday](https://ztygalaxy.github.io/happy-birthday-page/)， 或者扫描下方二维码。
+### 🎉 演示
 
-Tips：由于浏览器限制，部分浏览器无法播放 BGM。
+访问 [Happy Birthday](https://tyzhang.top/happy-birthday-pages/) 预览， 或者扫描下方二维码，点击音乐按钮可播放或者暂停 BGM。
 
-<img src="https://pic.tyzhang.top/images/2024/05/31/icon.png" style="zoom:33%;" />
+<img src="qcode.png" style="width: 100px" />
 
 ### 🔨 快速开始
 
-- 在 `index.html` 中，每一个 `.pageview` 标签代表一个页面，可以自由增删，或修改里面的文字。
+- 在 `index.html` 中，每一个 `.pageview` 标签代表一个页面，可以自由增删页面，或修改里面的文字。
 
   ```html
-  <div class="pageview" style="background-image: url(images/img01.png); background-position: center center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%;">
+  <div class="pageview" style="background-image: url(images/img01.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%;">
       <center style="margin-top: 15%">
           <h1 style="font-size: 50px;color: #FFFFFF">Hello</h1>
           <h2 style="font-size: 45px;color: #FFFFFF">World</h2>
           <h3 style="font-size: 30px;color: #FFFFFF">To : Username</h3>
       </center>
   </div>                 
+  ```
+
+- 修改 `index.html` 中有关音乐的部分以替换 BGM。
+
+  ```html
+  <audio id="bgm" src="http://download.tyzhang.top/files/bgm.mp3" loop="loop"></audio>
   ```
 
 - `/images` 下存放了每一页的背景图。
@@ -36,6 +42,6 @@ Tips：由于浏览器限制，部分浏览器无法播放 BGM。
 
 首次提交：`2017-03-27`
 
-最新提交：`2024-05-31`
+最新提交：`2024-06-10`
 
 记得给我一颗star，有问题可以[邮件](mailto:zhangty1996@163.com)给我。

@@ -3,23 +3,28 @@
     var currentPoint = -1;   // 记录当前点的位置
     var pageNow = 1;   // 当前页码
     var points = null; // 页码数
+    var pagePointView = null; // 分页符
+    var pageLoading = null; // 加载动画
+    var playBtn = null; // 音乐播放按钮
 
     var app = {
         init: function () {
-            if (/(windows)/i.test(navigator.userAgent)) {
+            var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+            if (!mobile) {
                 location.href = 'views/pc.html';
             }
             window.onload = function () {
                 var viewport = document.querySelector('.viewport');
                 viewport.style.opacity = "1";
+                pagePointView.style.opacity = "1";
+                playBtn.style.opacity = "1";
+                pageLoading.style.opacity = "0";
             }
             document.addEventListener('DOMContentLoaded', function () {
                 var viewport = document.querySelector('.viewport');
                 viewport.style.opacity = "0";
                 var numItems = viewport.children.length;
                 viewport.style.width = numItems * 100 + '%';
-                window.console.log(viewport.style.width);
-
                 var numItems = document.querySelectorAll('.pageview center');
                 var pageNumber = document.getElementsByClassName('pagenumber')[0];
                 pageNumber.innerHTML = '';
@@ -28,6 +33,12 @@
                     pageNumber.appendChild(div);
                 }
                 points = document.querySelectorAll('.pagenumber div');
+                pagePointView = document.querySelector('.pagenumber');
+                pagePointView.style.opacity = "0";
+                pageLoading = document.querySelector('#pageloading');
+                pageLoading.style.opacity = "1";
+                playBtn = document.querySelector('#playbtn');
+                playBtn.style.opacity = "0";
                 app.bindTouchEvent(); // 绑定触摸事件
                 app.setPageNow();     // 设置初始页码
             }.bind(app), false);
@@ -55,7 +66,6 @@
          * 绑定触摸事件
          */
         bindTouchEvent: function () {
-            window.console.log('touch')
             var viewport = document.querySelector('#viewport');
             var pageWidth = window.innerWidth; // 页面宽度
             var maxWidth = - pageWidth * (points.length - 1); // 页面滑动最后一页的位置
@@ -160,3 +170,16 @@
         }
     }
 })(window, document);
+
+function playPause() {
+    var music = document.getElementById('bgm');
+    var music_btn = document.getElementById('playbtn');
+    if (music.paused){
+        music.play();
+        music_btn.src = 'images/play.png';
+    }
+    else{
+        music.pause();
+        music_btn.src = 'images/pause.png'; 
+    }
+}
