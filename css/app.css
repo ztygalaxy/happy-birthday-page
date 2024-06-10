@@ -41,6 +41,17 @@ html,body{
    backface-visibility: hidden;
    position: relative;
 }
+.viewport-ver{
+    width: 100%;
+    height: 100%;
+    /* display: -webkit-box; */
+    display:flex;
+    flex-direction:column;
+    overflow: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+    position: relative;
+ }
 .pageview{
     display: flex;
     align-items: center;
@@ -57,6 +68,18 @@ html,body{
     height: 1em;
     width: 30%;
 }
+.pagenumber-ver{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: -webkit-box;
+    position: absolute;
+    right: -6%;
+    top: 45%;
+    height: 1em;
+    width: 30%;
+}
 .pagenumber div{
     -webkit-box-flex: 1;
     width: 0;
@@ -66,6 +89,26 @@ html,body{
     background: rgba(255,255,255,1) !important;
 }
 .pagenumber div:after{
+    content: "";
+    width: 6px;
+    height: 6px; 
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3px;
+    margin-left: -3px;
+}
+.pagenumber-ver div{
+    -webkit-box-flex: 1;
+    width: 0;
+    position: relative;
+}
+.pagenumber-ver .now:after {
+    background: rgba(255,255,255,1) !important;
+}
+.pagenumber-ver div:after{
     content: "";
     width: 6px;
     height: 6px; 

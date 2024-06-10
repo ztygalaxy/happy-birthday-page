@@ -6,7 +6,7 @@
 
 ### 一个 HTML 动态网页生日贺卡，送给好朋友的生日礼物。
 
-<img src="demo.jpeg" style="width: 200px" />
+<img src="demo.jpeg" style="width: 300px" />
 
 ### 🎉 演示
 
@@ -16,7 +16,7 @@
 
 ### 🔨 快速开始
 
-- 在 `index.html` 中，每一个 `.pageview` 标签代表一个页面，可以自由增删页面，或修改里面的文字。
+- 在 `index.html` 中，每一个 `.pageview` 标签代表一个页面，可以**自由增删页面**，或修改里面的文字。
 
   ```html
   <div class="pageview" style="background-image: url(images/img01.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%;">
@@ -28,13 +28,19 @@
   </div>                 
   ```
 
-- 修改 `index.html` 中有关音乐的部分以替换 BGM。
+- 修改 `index.html` 中有关音乐的部分以**替换 BGM**。
 
   ```html
   <audio id="bgm" src="http://download.tyzhang.top/files/bgm.mp3" loop="loop"></audio>
   ```
 
-- `/images` 下存放了每一页的背景图。
+- 修改 `js/app.js`  中的页面方向参数，**横向或者纵向滑动**。
+
+   ```javascript
+   var vertical = false; // 页面滑动方向
+   ```
+
+- `/images` 下存放了每一页的**背景图**。
 
 - `Fork` 并修改后，发布为 `GitHub Pages` 即可。
 
