@@ -6,7 +6,13 @@
 
 ### 一个 HTML 动态网页生日贺卡，送给好朋友的生日礼物。
 
-<img src="demo.jpeg" style="width: 300px" />
+### 💡 功能
+
+- 自定义 背景 & 文字 & 背景音乐
+- 支持 纵向/横向 滑动
+- 最后一页 展示/点击 弹出五彩纸屑特效
+
+<img src="demo.gif" style="width: 300px" />
 
 ### 🎉 演示
 
@@ -16,7 +22,7 @@
 
 ### 🔨 快速开始
 
-- 在 `index.html` 中，每一个 `.pageview` 标签代表一个页面，可以**自由增删页面**，或修改里面的文字。
+- 在 `index.html` 中，每一个 `.pageview` 标签代表一个页面，可以**自由增删**，或修改里面的文字。
 
   ```html
   <div class="pageview" style="background-image: url(images/img01.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%;">
@@ -34,10 +40,12 @@
   <audio id="bgm" src="http://download.tyzhang.top/files/bgm.mp3" loop="loop"></audio>
   ```
 
-- 修改 `js/app.js`  中的页面方向参数，**横向或者纵向滑动**。
+- 修改 `js/app.js`  中的配置参数，开启 **滑动方向**、**背景音乐**、五彩纸屑 等功能。
 
    ```javascript
-   var vertical = false; // 页面滑动方向
+   var verticalSlide = false; // 页面滑动方向
+   var confettisAllow = true; // 礼花特效
+   var bgmAllow = true; // BGM 功能
    ```
 
 - `/images` 下存放了每一页的**背景图**。
@@ -48,6 +56,6 @@
 
 首次提交：`2017-03-27`
 
-最新提交：`2024-06-10`
+最新提交：`2024-06-12`
 
-记得给我一颗star，有问题可以[邮件](mailto:zhangty1996@163.com)给我。
+记得给我一颗 ✨，有问题可以[邮件](mailto:zhangty1996@163.com)给我。

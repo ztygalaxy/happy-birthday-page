@@ -1,4 +1,8 @@
 (function (window, document) {
+    var verticalSlide = false; // 页面滑动方向
+    var confettisAllow = true; // 礼花特效
+    var bgmAllow = true; // BGM 功能
+
     var currentPosition = 0; // 记录当前页面位置
     var currentPoint = -1;   // 记录当前点的位置
     var pageNow = 1;   // 当前页码
@@ -6,7 +10,6 @@
     var pagePointView = null; // 分页符
     var pageLoading = null; // 加载动画
     var playBtn = null; // 音乐播放按钮
-    var vertical = false; // 页面滑动方向
 
     var app = {
         init: function () {
@@ -14,18 +17,31 @@
             if (!mobile) {
                 location.href = 'views/pc.html';
             }
+            window.ontouchend = function () {
+                setTimeout(function () {
+                    if (pageNow == points.length && confettisAllow) {
+                        confettis();
+                        confettisAllow = false;
+                        setTimeout(function () {
+                            confettisAllow = true;
+                        }.bind(this), 800);
+                    }
+                }.bind(this), 800);
+            }
             window.onload = function () {
                 var viewport = document.querySelector('#viewport');
                 viewport.style.opacity = "1";
                 pagePointView.style.opacity = "1";
-                playBtn.style.opacity = "1";
+                if (bgmAllow) {
+                    playBtn.style.opacity = "1";
+                }
                 pageLoading.style.opacity = "0";
             }
             document.addEventListener('DOMContentLoaded', function () {
                 var viewport = document.querySelector('#viewport');
                 viewport.style.opacity = "0";
                 var numItems = viewport.children.length;
-                if (vertical) {
+                if (verticalSlide) {
                     viewport.style.height = numItems * 100 + '%';
                     viewport.className = "viewport-ver";
                 } else {
@@ -42,7 +58,7 @@
                 points = document.querySelectorAll('#pagenumber div');
                 pagePointView = document.querySelector('#pagenumber');
                 pagePointView.style.opacity = "0";
-                if (vertical) {
+                if (verticalSlide) {
                     pagePointView.className = 'pagenumber-ver';
                 } else {
                     pagePointView.className = 'pagenumber';
@@ -51,7 +67,7 @@
                 pageLoading.style.opacity = "1";
                 playBtn = document.querySelector('#playbtn');
                 playBtn.style.opacity = "0";
-                if (vertical) {
+                if (verticalSlide) {
                     app.bindVerticalTouchEvent(); // 绑定触摸事件
                 } else {
                     app.bindHisTouchEvent(); // 绑定触摸事件
@@ -62,7 +78,7 @@
 
         // 页面平移
         transform: function (translate) {
-            if (vertical) {
+            if (verticalSlide) {
                 this.style.webkitTransform = 'translate3d(0, ' + translate + 'px, 0)';
             } else {
                 this.style.webkitTransform = 'translate3d(' + translate + 'px, 0, 0)';
@@ -299,7 +315,7 @@
     }
 })(window, document);
 
-function playPause() {
+function play() {
     var music = document.getElementById('bgm');
     var music_btn = document.getElementById('playbtn');
     if (music.paused){
@@ -310,4 +326,28 @@ function playPause() {
         music.pause();
         music_btn.src = 'images/pause.png'; 
     }
+}
+
+function confettis() {
+    confetti({
+        particleCount: 200,
+        spread: 60,
+        angle: 60,
+        gravity: 0.8,
+        origin: {
+            x: 0.2,
+            y: 0.8
+        }
+    });
+
+    confetti({
+        particleCount: 200,
+        spread: 60,
+        angle: 120,
+        gravity: 0.8,
+        origin: {
+            x: 0.8,
+            y: 0.8
+        }
+    });
 }
